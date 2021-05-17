@@ -1,0 +1,24 @@
+.main_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    .user_info_list_wrapper {
+        list-style-type: none;
+        height: 300px;
+        overflow: auto;
+        box-shadow: 10px 10px 10px 2px grey;
+        .user_name {
+            margin-left: 10%;
+        }
+    }
+    .timer_wrapper {
+        font-size: 50px;
+    }
+}
+
+.result_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+}
