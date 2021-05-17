@@ -15,8 +15,8 @@ const Timer: FunctionComponent<Props> = ({ countDownCallback }) => {
     const preRestTime = useRef(restTime);
     const dipatch = useDispatch();
     const seconds = restTime % 60;
-    const mins = Math.floor(restTime / 60);
-    const hrs = Math.floor(mins / 60);
+    const mins = Math.floor((restTime / 60) % 60);
+    const hrs = Math.floor(restTime / 3600);
     const source = timer(1000, 2000);
 
     useEffect(() => {
