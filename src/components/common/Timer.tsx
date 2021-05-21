@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GlobalStateModel } from '~/models/storeModels';
 import { timer } from 'rxjs';
-import { setTimer } from '~/stores/childReducers/timer/timerStoreAction';
 import lotteryStyle from '~/styles/lottery.module.scss';
 import { numberStringFormater } from '~/util/commonUtil';
+import { GlobalStateModel } from '~/models/storeModels';
+import { setTimer } from '~/stores/childReducers/timer/timerStoreAction';
 
 interface Props {
     countDownCallback: () => void;
@@ -36,9 +36,15 @@ const Timer: FunctionComponent<Props> = ({ countDownCallback }) => {
 
     return (
         <div className={lotteryStyle.timer_wrapper}>
-            <span>{numberStringFormater(`${hrs}`, 2)}:</span>
-            <span>{numberStringFormater(`${mins}`, 2)}:</span>
-            <span>{numberStringFormater(`${seconds}`, 2)}</span>
+            <span data-testid="timer_hrs">
+                {numberStringFormater(`${hrs}`, 2)}:
+            </span>
+            <span data-testid="timer_mins">
+                {numberStringFormater(`${mins}`, 2)}:
+            </span>
+            <span data-testid="timer_secs">
+                {numberStringFormater(`${seconds}`, 2)}
+            </span>
         </div>
     );
 };
